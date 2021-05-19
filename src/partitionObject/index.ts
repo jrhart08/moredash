@@ -1,5 +1,5 @@
 import { includes } from 'lodash/fp';
-import partitionObjectBy from './partitionObjectBy';
+import partitionObjectBy from '../partitionObjectBy';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 const partitionObject = <T extends object>(

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @typescript-eslint/naming-convention */
-import partitionObject from './partitionObject';
+import partitionObject from '.';
 
 describe('partitionObject', () => {
   let product: any;

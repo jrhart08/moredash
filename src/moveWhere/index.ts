@@ -1,6 +1,6 @@
 import { findIndex, iteratee } from 'lodash/fp';
-import move from './move';
-import { Predicate, PredicateIteratee } from './types';
+import move from '../move';
+import { Predicate, PredicateIteratee } from '../types';
 
 const moveWhere = <T>(
   predicate: PredicateIteratee<T>,

@@ -1,5 +1,5 @@
 import { toPairs, iteratee } from 'lodash/fp';
-import { Predicate2, Predicate2Iteratee } from './types';
+import { Predicate2, Predicate2Iteratee } from '../types';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 const partitionObjectBy = <T extends object>(
