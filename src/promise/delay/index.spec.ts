@@ -12,7 +12,7 @@ describe('delay', () => {
             const after = new Date();
             const elapsedMs = after.getTime() - before.getTime();
 
-            expect(elapsedMs).toBeGreaterThanOrEqual(50);
+            expect(elapsedMs).toBeGreaterThanOrEqual(48);
             expect(elapsedMs).toBeLessThanOrEqual(60);
             expect(abc).toBe('abc');
           });
