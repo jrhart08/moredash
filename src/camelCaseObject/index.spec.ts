@@ -10,6 +10,10 @@ describe('camelCaseObject', () => {
           Successor: {
             FirstName: 'Joseph',
             LastName: 'Joestar',
+            Successor: {
+              FirstName: 'Jotaro',
+              LastName: 'Kujo',
+            },
           },
         };
 
@@ -19,6 +23,10 @@ describe('camelCaseObject', () => {
           successor: {
             firstName: 'Joseph',
             lastName: 'Joestar',
+            successor: {
+              firstName: 'Jotaro',
+              lastName: 'Kujo',
+            },
           },
         });
       });
@@ -48,7 +56,7 @@ describe('camelCaseObject', () => {
   });
 
   describe('Given an array', () => {
-    it('Should camelCase each object recursively in the array', () => {
+    it('Should camelCase each element recursively in the array', () => {
       const joestars = [
         {
           FirstName: 'Jonathan',
