@@ -4,7 +4,7 @@ module.exports = {
     '../setupTests.js',
   ],
   collectCoverageFrom: [
-    'src/**/*.ts',
+    '**/*.ts',
   ],
   coverageThreshold: {
     global: {
