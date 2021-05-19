@@ -14,7 +14,7 @@
     "build:ts": "tsc --project ./tsconfig.prod.json",
     "build": "npm-run-all --serial build:babel build:ts",
     "typecheck": "tsc",
-    "test": "jest src --verbose",
+    "test": "jest --verbose",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint src --ext .ts,.js"
