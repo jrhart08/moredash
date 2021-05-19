@@ -1,19 +1,20 @@
-import { findIndex, iteratee } from 'lodash/fp';
-import move from '../move';
+import { findIndex, iteratee, isNumber } from 'lodash/fp';
 import { Predicate, PredicateIteratee } from '../types';
+import move from '../move';
 
 const moveWhere = <T>(
   predicate: PredicateIteratee<T>,
-  toIndex: number,
+  to: number | PredicateIteratee<T>,
   list: T[],
 ): T[] => {
   const pred = iteratee(predicate) as Predicate<T>;
 
-  const index = findIndex(pred, list);
+  const fromIndex = findIndex(pred, list);
+  const toIndex = isNumber(to)
+    ? to as number
+    : findIndex(iteratee(to), list);
 
-  return index === -1
-    ? list
-    : move(index, toIndex, list);
+  return move(fromIndex, toIndex, list);
 };
 
 export default moveWhere;
