@@ -11,7 +11,7 @@ describe('sleep', () => {
         const elapsedMs = after.getTime() - before.getTime();
 
         expect(elapsedMs).toBeGreaterThanOrEqual(50);
-        expect(elapsedMs).toBeLessThanOrEqual(52);
+        expect(elapsedMs).toBeLessThanOrEqual(60);
       });
     });
 
@@ -24,7 +24,7 @@ describe('sleep', () => {
         const elapsedMs = after.getTime() - before.getTime();
 
         expect(elapsedMs).toBeGreaterThanOrEqual(0);
-        expect(elapsedMs).toBeLessThanOrEqual(2);
+        expect(elapsedMs).toBeLessThanOrEqual(10);
       });
     });
 
@@ -37,7 +37,7 @@ describe('sleep', () => {
         const elapsedMs = after.getTime() - before.getTime();
 
         expect(elapsedMs).toBeGreaterThanOrEqual(0);
-        expect(elapsedMs).toBeLessThanOrEqual(2);
+        expect(elapsedMs).toBeLessThanOrEqual(10);
       });
     });
   });
