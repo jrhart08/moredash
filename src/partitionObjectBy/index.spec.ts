@@ -30,8 +30,8 @@ describe('partitionObjectBy', () => {
 
     describe('Given a predicate that takes 2 arguments', () => {
       it('Should pass the property value as argument 1, and the key as argument 2', () => {
-        const isKeyUnder5Letters = (_, key) => key.length < 5;
-        const [hasName, hasOthers] = partitionObjectBy(isKeyUnder5Letters, product);
+        const isNameKey = (_, key) => key === 'name';
+        const [hasName, hasOthers] = partitionObjectBy(isNameKey, product);
 
         expect(hasName).toEqual({
           name: 'My Product',
