@@ -1,4 +1,4 @@
-import { isNumber } from 'lodash';
+import isNumber from 'lodash/fp/isNumber';
 import partitionObjectBy from '.';
 
 describe('partitionObjectBy', () => {
@@ -30,7 +30,7 @@ describe('partitionObjectBy', () => {
 
     describe('Given a predicate that takes 2 arguments', () => {
       it('Should pass the property value as argument 1, and the key as argument 2', () => {
-        const isNameKey = (_, key) => key === 'name';
+        const isNameKey = (_: any, key: string) => key === 'name';
         const [hasName, hasOthers] = partitionObjectBy(isNameKey, product);
 
         expect(hasName).toEqual({

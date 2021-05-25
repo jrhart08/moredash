@@ -1,19 +1,18 @@
 {
   "name": "moredash",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A general-purpose utility library for when lodash isn't enough",
-  "main": "lib/index.ts",
+  "main": "lib/index.js",
   "files": [
-    "src",
     "lib"
   ],
   "scripts": {
     "prebuild": "npm-run-all --serial typecheck lint test:coverage clean",
     "clean": "rimraf lib",
-    "build:babel": "babel ./src -d ./lib --source-maps --extensions '.ts' --ignore '**/*.spec.ts'",
+    "build:babel": "babel ./src -d ./lib --extensions .ts --source-maps --ignore **/*.spec.ts",
     "build:ts": "tsc --project ./tsconfig.prod.json",
-    "build": "npm-run-all --serial build:babel build:ts",
-    "typecheck": "tsc",
+    "build": "run-s build:babel",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit",
     "test": "jest --verbose",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch",

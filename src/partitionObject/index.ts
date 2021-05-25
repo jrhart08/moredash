@@ -1,10 +1,10 @@
-import { includes } from 'lodash/fp';
+import { Dictionary } from 'lodash';
+import includes from 'lodash/fp/includes';
 import partitionObjectBy from '../partitionObjectBy';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-const partitionObject = <T extends object>(
-  pickKeys: string[],
-  source: T,
+const partitionObject = <T extends Dictionary<any>>(
+  pickKeys: string[] | null | undefined,
+  source: T | null | undefined,
 ): [Partial<T>, Partial<T>] => {
   const predicate = (val: any, key: string) => includes(key, pickKeys);
 

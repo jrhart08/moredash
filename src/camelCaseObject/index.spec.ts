@@ -1,3 +1,4 @@
+import { identity } from 'lodash';
 import camelCaseObject from '.';
 
 describe('camelCaseObject', () => {
@@ -105,6 +106,7 @@ describe('camelCaseObject', () => {
       expect(camelCaseObject(1)).toBe(1);
       expect(camelCaseObject(false)).toBe(false);
       expect(camelCaseObject(NaN)).toBeNaN();
+      expect(camelCaseObject(identity)).toBe(identity);
     });
   });
 });

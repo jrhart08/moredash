@@ -13,7 +13,6 @@ describe('delay', () => {
             const elapsedMs = after.getTime() - before.getTime();
 
             expect(elapsedMs).toBeGreaterThanOrEqual(48);
-            expect(elapsedMs).toBeLessThanOrEqual(60);
             expect(abc).toBe('abc');
           });
       });
@@ -30,7 +29,6 @@ describe('delay', () => {
             const elapsedMs = after.getTime() - before.getTime();
 
             expect(elapsedMs).toBeGreaterThanOrEqual(0);
-            expect(elapsedMs).toBeLessThanOrEqual(10);
             expect(abc).toBe('abc');
           });
       });
@@ -47,7 +45,6 @@ describe('delay', () => {
             const elapsedMs = after.getTime() - before.getTime();
 
             expect(elapsedMs).toBeGreaterThanOrEqual(0);
-            expect(elapsedMs).toBeLessThanOrEqual(10);
             expect(abc).toBe('abc');
           });
       });

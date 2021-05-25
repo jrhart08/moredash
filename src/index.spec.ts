@@ -5,4 +5,4 @@ describe('Canary test', () => {
 });
 
 // eslint-disable-next-line jest/no-export
-export {};
+// export {};

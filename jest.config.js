@@ -1,7 +1,7 @@
 module.exports = {
-  setupFilesAfterEnv: [
-    './setupTests.js',
-  ],
+  // setupFilesAfterEnv: [
+  //   './setupTests.js',
+  // ],
   collectCoverageFrom: [
     'src/**/*.ts',
   ],

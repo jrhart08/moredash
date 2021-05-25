@@ -15,6 +15,7 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/no-explicit-any": "warn",
+    'linebreak-style': 'off',
   },
   overrides: [
     {

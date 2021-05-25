@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2015",
-    "outDir": "./lib",
+    "target": "es2018",
+    "lib": [
+    ],
     "declaration": true,
-    // emit .d.ts files
-    "emitDeclarationOnly": true,
-    // don't emit .js files (let babel do it)
-    "isolatedModules": true
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": true
   },
   "include": [
-    "src/**/*"
+    "./src"
   ]
 }

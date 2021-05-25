@@ -1,9 +1,12 @@
-import { isEmpty } from 'lodash/fp';
+import isEmpty from 'lodash/fp/isEmpty';
+import { Nil } from '../types';
 
-const move = <T>(from: number, to: number, list: T[]): T[] => {
-  if (isEmpty(list)) {
+const move = <T>(from: number, to: number, source: Nil<T[]>): T[] => {
+  if (isEmpty(source)) {
     return [];
   }
+
+  const list = source as T[];
 
   if (!(from in list && to in list)) {
     return list;

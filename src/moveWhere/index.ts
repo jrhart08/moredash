@@ -1,11 +1,13 @@
-import { findIndex, iteratee, isNumber } from 'lodash/fp';
-import { Predicate, PredicateIteratee } from '../types';
+import findIndex from 'lodash/fp/findIndex';
+import iteratee from 'lodash/fp/iteratee';
+import isNumber from 'lodash/fp/isNumber';
+import { Predicate, PredicateIteratee, Nil } from '../types';
 import move from '../move';
 
 const moveWhere = <T>(
   predicate: PredicateIteratee<T>,
   to: number | PredicateIteratee<T>,
-  list: T[],
+  list: Nil<T[]>,
 ): T[] => {
   const pred = iteratee(predicate) as Predicate<T>;
 
