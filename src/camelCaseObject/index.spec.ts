@@ -1,4 +1,4 @@
-import { identity } from 'lodash';
+import identity from 'lodash/fp/identity';
 import camelCaseObject from '.';
 
 describe('camelCaseObject', () => {

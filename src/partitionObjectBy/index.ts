@@ -1,5 +1,6 @@
-import { Dictionary } from 'lodash';
-import { toPairs, iteratee } from 'lodash/fp';
+import type { Dictionary } from 'lodash';
+import toPairs from 'lodash/fp/toPairs';
+import iteratee from 'lodash/fp/iteratee';
 import {
   Predicate2,
   Predicate2Iteratee,

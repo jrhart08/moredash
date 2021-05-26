@@ -1,4 +1,4 @@
-import { Dictionary } from 'lodash';
+import type { Dictionary } from 'lodash';
 import includes from 'lodash/fp/includes';
 import partitionObjectBy from '../partitionObjectBy';
 
