@@ -6,16 +6,19 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
+    'lodash',
   ],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
     'airbnb-typescript/base',
+    'plugin:lodash/recommended',
   ],
   rules: {
     "@typescript-eslint/no-explicit-any": "warn",
     'linebreak-style': 'off',
+    'lodash/prefer-lodash-method': 'warn',
   },
   overrides: [
     {

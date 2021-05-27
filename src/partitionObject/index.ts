@@ -1,8 +1,8 @@
-import type { Dictionary } from 'lodash';
 import includes from 'lodash/fp/includes';
 import partitionObjectBy from '../partitionObjectBy';
+import { Dict } from '../types';
 
-const partitionObject = <T extends Dictionary<any>>(
+const partitionObject = <T extends Dict<any>>(
   pickKeys: string[] | null | undefined,
   source: T | null | undefined,
 ): [Partial<T>, Partial<T>] => {
