@@ -1,6 +1,6 @@
 {
   "name": "moredash",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A general-purpose utility library for when lodash isn't enough",
   "main": "lib/index.js",
   "files": [
