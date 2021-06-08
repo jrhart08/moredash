@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "include": [
+        "./src",
+        "./decs.d.ts",
+        "./.eslintrc.js",
+        "./.babelrc.js",
+        "./jest.config.js"
+    ]
+}

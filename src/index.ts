@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export { default as partitionObject } from './partitionObject';
 export { default as partitionObjectBy } from './partitionObjectBy';
 export { default as trimObject } from './trimObject';

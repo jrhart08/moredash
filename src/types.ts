@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export type Predicate<T> = (item: T) => boolean;
 export type Predicate2<V, K> = (elem: V, key: K) => boolean;
 export type PredicateIteratee<T> = Predicate<T> | Partial<T> | string;
