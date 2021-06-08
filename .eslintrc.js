@@ -2,21 +2,21 @@ module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: './tsconfig.json',
+    project: './tsconfig.eslint.json',
   },
   plugins: [
     '@typescript-eslint',
     'lodash',
   ],
   extends: [
+    'airbnb-typescript/base',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
-    'airbnb-typescript/base',
     'plugin:lodash/recommended',
   ],
   rules: {
-    "@typescript-eslint/no-explicit-any": "warn",
+    '@typescript-eslint/no-explicit-any': 'warn',
     'linebreak-style': 'off',
     'lodash/prefer-lodash-method': 'warn',
   },
@@ -24,6 +24,7 @@ module.exports = {
     {
       files: ['src/**/*.spec.ts'],
       rules: {
+        'jest/expect-expect': 'off',
         '@typescript-eslint/no-use-before-define': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         'no-underscore-dangle': 'off',
