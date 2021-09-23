@@ -1,19 +1,19 @@
 {
   "name": "moredash",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A general-purpose utility library for when lodash isn't enough",
   "main": "lib/index.js",
   "files": [
     "lib"
   ],
   "scripts": {
-    "prebuild": "run-s lint test:coverage clean",
     "clean": "rimraf lib",
     "build": "tsc --project ./tsconfig.prod.json",
-    "test": "jest --verbose",
+    "build:clean": "run-s clean build",
+    "lint": "eslint ./src --ext .ts,.js",
+    "test": "jest",
     "test:coverage": "npm run test -- --coverage",
-    "test:watch": "npm run test -- --watch",
-    "lint": "eslint src --ext .ts,.js"
+    "prepublishOnly": "run-s build:clean test:coverage"
   },
   "repository": {
     "type": "git",
