@@ -9,9 +9,9 @@ export default <T, TJoin>(
 ): (T | TJoin)[] => withKey(flatMap)(
   (arr: T[], i: number) => {
     if (i < arrays.length - 1) {
-      return [...arr, separator];
+      return [arr, separator];
     }
-    return arr;
+    return [arr];
   },
   arrays,
 );

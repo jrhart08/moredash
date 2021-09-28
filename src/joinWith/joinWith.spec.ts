@@ -58,7 +58,7 @@ function joining_with_separator(this: Context) {
 }
 
 function result_is_arrays_joined_with_separator(this: Context) {
-  expect(this.result).toEqual(['cat', 'dog', Symbol.for('separator'), 'fish', 'camel']);
+  expect(this.result).toEqual([['cat', 'dog'], Symbol.for('separator'), ['fish', 'camel']]);
 }
 
 function result_does_NOT_have_separator(this: Context) {
