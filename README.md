@@ -159,8 +159,45 @@ console.log(fooBar); // { foo: 'foo', bar: 'bar' }
 
 # Arrays
 
+## joinWith
+### `<T, TJoin>(separator: TJoin, arrays: Array<T[]>) => (T | TJoin)[]`
 
+Flat-maps the arrays, joined by the given separator.
 
+Usage:
+```ts
+const _123 = [1, 2, 3];
+const _456 = [4, 5, 6];
+const _789 = [7, 8, 9];
+
+joinWith('|', [_123, _456, _789]); // [1, 2, 3, '|', 4, 5, 6, '|', 7, 8, 9]
+```
+
+## move
+### `<T>(from: number, to: number, source: Nil<T[]>): T[]`
+
+Moves an element to the destination index.
+
+If start > destination, elements will be pushed to the right.
+
+If start < destination, elements will be pushed to the left.
+
+Usage:
+```ts
+// NOTE: moved elements are capitalized and double-quoted
+
+// moving element to the left
+const qwertY = ['q', 'w', 'e', 'r', 't', "_Y_"];
+const qwYert = move(5, 2, qwertY);
+
+expect(qwYert.join('')).toBe('qw_Y_ert');
+
+// moving element to the right
+const Dvorak = ["_D_", 'v', 'o', 'r', 'a', 'k'];
+const vorakD = move(0, 5, Dvorak);
+
+expect(vorakD.join('')).toBe('vorak_D_');
+```
 
 # Functions
 
