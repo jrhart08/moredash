@@ -19,7 +19,11 @@ General-purpose utility functions for when lodash isn't enough
 
 # Functions
 
-
+### [lazy](src/lazy/README.md)
+### [withKey](src/withKey/README.md)
 
 
 # Promises
+
+### [delay](src/delay/README.md)
+### [sleep](src/sleep/README.md)
