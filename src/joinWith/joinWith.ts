@@ -1,6 +1,4 @@
-import {
-  flatMap,
-} from 'lodash/fp';
+import flatMap from 'lodash/fp/flatMap';
 import withKey from '../withKey';
 
 export default <T, TJoin>(
