@@ -1,6 +1,7 @@
 /* istanbul ignore file */
 export { default as camelCaseObject } from './camelCaseObject';
 export { default as delay } from './delay';
+export { default as flowYield } from './flowYield';
 export { default as joinWith } from './joinWith';
 export { default as lazy } from './lazy';
 export { default as mapKeysRecursive } from './mapKeysRecursive';
