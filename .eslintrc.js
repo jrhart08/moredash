@@ -24,6 +24,7 @@ module.exports = {
     {
       files: ['src/**/*.spec.ts'],
       rules: {
+        'no-undef-init': 'off',
         'jest/expect-expect': 'off',
         '@typescript-eslint/no-use-before-define': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
