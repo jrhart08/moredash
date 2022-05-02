@@ -4,8 +4,8 @@
   "description": "A general-purpose utility library for when lodash isn't enough",
   "main": "lib/index.js",
   "files": [
-    "dist",
-    "lib"
+    "lib",
+    "src"
   ],
   "scripts": {
     "clean": "rimraf lib",
