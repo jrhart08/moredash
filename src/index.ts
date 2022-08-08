@@ -5,6 +5,7 @@ export { default as flowYield } from './flowYield';
 export { default as joinWith } from './joinWith';
 export { default as lazy } from './lazy';
 export { default as mapKeysRecursive } from './mapKeysRecursive';
+export { default as modifyBy } from './modifyBy';
 export { default as move } from './move';
 export { default as moveWhere } from './moveWhere';
 export { default as partitionObject } from './partitionObject';
