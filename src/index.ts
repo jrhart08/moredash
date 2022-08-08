@@ -11,6 +11,7 @@ export { default as partitionObject } from './partitionObject';
 export { default as partitionObjectBy } from './partitionObjectBy';
 export { default as pickDeep } from './pickDeep';
 export { default as project } from './project';
+export { default as replaceBy } from './replaceBy';
 export { default as sleep } from './sleep';
 export { default as trimObject } from './trimObject';
 export { default as withKey } from './withKey';
