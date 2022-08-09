@@ -4,17 +4,17 @@ import {
   upperCase,
 } from 'lodash/fp';
 
-import modifyBy from './modifyBy';
+import mapBy from './mapBy';
 
-describe('modify by', () => {
-  test('modifies', {
+describe('map by', () => {
+  test('filters and maps', {
     given: {
       predicate,
       array_contains_match,
       modifier,
     },
     when: {
-      modifying_by,
+      mapping_by,
     },
     then: {
       result_is_NEW_array,
@@ -23,14 +23,14 @@ describe('modify by', () => {
     },
   });
 
-  test('modifys by shorthand', {
+  test('maps by shorthand', {
     given: {
       predicate_SHORTHAND,
       array_contains_match,
       modifier,
     },
     when: {
-      modifying_by,
+      mapping_by,
     },
     then: {
       result_is_NEW_array,
@@ -39,14 +39,14 @@ describe('modify by', () => {
     },
   });
 
-  test('modifys MANY', {
+  test('maps MANY', {
     given: {
       predicate,
       array_contains_MANY_matches,
       modifier,
     },
     when: {
-      modifying_by,
+      mapping_by,
     },
     then: {
       result_is_NEW_array,
@@ -62,24 +62,24 @@ type TestType = {
 
 type Context = {
   array: TestType[],
-  predicate: Parameters<typeof modifyBy>[0],
+  predicate: Parameters<typeof mapBy>[0],
   modifier: (v: TestType) => TestType,
 
   result: TestType[],
 };
 
 function predicate(this: Context) {
-  this.predicate = (ele: TestType) => startsWith('modify', ele.value);
+  this.predicate = (ele: TestType) => startsWith('map', ele.value);
 }
 
 function predicate_SHORTHAND(this: Context) {
-  this.predicate = { value: 'modify this' };
+  this.predicate = { value: 'map this' };
 }
 
 function array_contains_match(this: Context) {
   this.array = [
     { value: 'leave' },
-    { value: 'modify this' },
+    { value: 'map this' },
     { value: 'existing' },
   ];
 }
@@ -87,9 +87,9 @@ function array_contains_match(this: Context) {
 function array_contains_MANY_matches(this: Context) {
   this.array = [
     { value: 'leave' },
-    { value: 'modify this' },
+    { value: 'map this' },
     { value: 'existing' },
-    { value: 'modify this too' },
+    { value: 'map this too' },
     { value: 'and NOT this' },
   ];
 }
@@ -100,8 +100,8 @@ function modifier(this: Context) {
   });
 }
 
-function modifying_by(this: Context) {
-  this.result = modifyBy(
+function mapping_by(this: Context) {
+  this.result = mapBy(
     this.predicate,
     this.modifier,
     this.array,
@@ -113,7 +113,7 @@ function result_is_NEW_array(this: Context) {
 }
 
 function match_is_modified(this: Context) {
-  expect(this.result[1]).toEqual({ value: 'MODIFY THIS' });
+  expect(this.result[1]).toEqual({ value: 'MAP THIS' });
 }
 
 function NOT_matched_indexes_are_SAME(this: Context) {
@@ -122,6 +122,6 @@ function NOT_matched_indexes_are_SAME(this: Context) {
 }
 
 function ALL_matches_modified(this: Context) {
-  expect(this.result[1]).toEqual({ value: 'MODIFY THIS' });
-  expect(this.result[3]).toEqual({ value: 'MODIFY THIS TOO' });
+  expect(this.result[1]).toEqual({ value: 'MAP THIS' });
+  expect(this.result[3]).toEqual({ value: 'MAP THIS TOO' });
 }
