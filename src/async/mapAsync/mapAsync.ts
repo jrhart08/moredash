@@ -1,6 +1,6 @@
 import reduceAsync from '../reduceAsync';
 
-const findAsync = <T, TReturn>(
+const mapAsync = <T, TReturn>(
   predicate: (element: T) => Promise<TReturn>,
   data: T[],
 ): Promise<TReturn[]> => reduceAsync(
@@ -10,4 +10,4 @@ const findAsync = <T, TReturn>(
     [],
     data,
   );
-export default findAsync;
+export default mapAsync;

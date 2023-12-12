@@ -1,6 +1,6 @@
 import reduceAsync from '../reduceAsync';
 
-const findAsync = <T>(
+const filterAsync = <T>(
   predicate: (element: T) => Promise<boolean>,
   data: T[],
 ): Promise<T[]> => reduceAsync(
@@ -10,4 +10,4 @@ const findAsync = <T>(
     [],
     data,
   );
-export default findAsync;
+export default filterAsync;
