@@ -1,4 +1,6 @@
 /* istanbul ignore file */
+export * from './async';
+
 export { default as camelCaseObject } from './camelCaseObject';
 export { default as delay } from './delay';
 export { default as flowYield } from './flowYield';
